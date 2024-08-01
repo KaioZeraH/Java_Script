@@ -73,11 +73,22 @@ section {
                     width: 100%;
                     transform: rotate(-30deg);
                 }
+                &&::before {
+                    content: '';
+                    position: absolute;
+                    background-color: black;
+                    width: 100%;
+                    height: 100px;
+                    top: 150%;
+                    left: 50px;
+                    border: 50%;
+                    filter: blur(50px);
+                }
             }
 
             & .conteudo {
                 position: absolute;
-                right: 100px;
+                right: 50px;
                 width: 70%;
                 height: 104.7%;
                 display: flex;
@@ -91,7 +102,7 @@ section {
                 }
 
                 & h2 {
-                    font-size: 5.5em;
+                    font-size: 3.5em;
                     line-height: 1em;
                     font-family: "League Gothic", sans-serif;
 
@@ -197,13 +208,13 @@ section {
             & li {
                 width: 50px;
                 height: 5px;
-                background-color: #beff1b;
+                background-color: #12f30a;
                 border-radius: 5px;
                 transition: 0.5s;
             }
 
             & .active {
-                background-color: white;
+                background-color: rgb(255, 255, 255);
             }
         }
 
@@ -214,8 +225,10 @@ section {
 section {
 
     & .list {
+        --calculation: 1;
+
         & .item {
-            transform: translateX(100vw);
+            transform: translateX(calc(100vw * var(--calculation)));
             transition: 0.5s;
             opacity: 0;
 
@@ -234,10 +247,10 @@ section {
                 h2,
                 .descricao,
                 .information {
-                    transform: translateX(200px);
+                    transform: translateX(calc (200px * var(--calculation)));
                     transition: 0.7s;
                     transition-delay: 0.3s;
-                    opacity: 0;
+
                 }
 
                 & h2 {
@@ -271,7 +284,7 @@ section {
                     .descricao,
                     .information {
                         transform: translateX(0);
-                        opacity: 1;
+
                     }
                 }
 
